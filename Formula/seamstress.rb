@@ -5,8 +5,8 @@ class Seamstress < Formula
   sha256 "813d0fdb117af0cb6b9c3222f921eb4f397bc329400b63ec17f6f644978deb0c"
   license "GPL-3.0-or-later"
 
-  depends_on "zig" => :build
   depends_on "pkg-config" => :build
+  depends_on "zig" => :build
   depends_on "freetype"
   depends_on "harfbuzz"
   depends_on "ncurses"
