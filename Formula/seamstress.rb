@@ -12,7 +12,7 @@ class Seamstress < Formula
   depends_on "ncurses"
 
   def install
-    system "zig", "build", "install", "-Doptimize=ReleaseFast", "--prefix", prefix.to_s
+    system "zig", "build", "install", "--verbose", "-Doptimize=ReleaseFast", "--prefix", prefix.to_s
   end
 
   test do
