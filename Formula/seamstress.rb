@@ -6,6 +6,7 @@ class Seamstress < Formula
   license "GPL-3.0-or-later"
 
   depends_on "zig" => :build
+  depends_on "pkg-config" => :build
   depends_on "freetype"
   depends_on "harfbuzz"
   depends_on "ncurses"
