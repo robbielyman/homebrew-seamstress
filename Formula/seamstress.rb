@@ -10,7 +10,6 @@ class Seamstress < Formula
   depends_on "harfbuzz"
   depends_on "ncurses"
 
-
   def install
     system "zig", "build", "install", "-Doptimize=ReleaseFast", "--prefix", prefix.to_s
   end
