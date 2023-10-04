@@ -1,22 +1,50 @@
 class Seamstress < Formula
   desc "Lua scripting environment for musical communication"
   homepage "https://github.com/ryleelyman/seamstress"
-  url "https://github.com/ryleelyman/seamstress/archive/refs/tags/v0.24.1.tar.gz"
-  sha256 "5f5d435c2b9d4278d11bd45b34b7468d81ec2f6ac275a92d1210e0b24f77f0b4"
+  url "https://github.com/ryleelyman/seamstress/archive/refs/tags/v0.24.2.tar.gz"
+  sha256 "e4950f1d1c1dd05a179e50d5169528c553140196c8e03197d55648d20db03c71"
   license "GPL-3.0-or-later"
 
   depends_on "pkg-config" => :build
   depends_on "zig" => :build
   depends_on "freetype"
   depends_on "harfbuzz"
+  depends_on "libpng"
   depends_on "ncurses"
+
+  on_linux do
+    depends_on "alsa-lib"
+    depends_on "dbus"
+    depends_on "jack"
+    depends_on "libdrm"
+    depends_on "libsamplerate"
+    depends_on "libxcb"
+    depends_on "libxcursor"
+    depends_on "libxext"
+    depends_on "libxi"
+    depends_on "libxkbcommon"
+    depends_on "libxrandr"
+    depends_on "systemd"
+    depends_on "wayland"
+  end
 
   def install
     system "zig", "build", "install", "--verbose", "-Doptimize=ReleaseFast", "--prefix", prefix.to_s
   end
 
   test do
-    system "echo", "_seamstress.quit_lvm\\(\\)", ">>", "#{bin}/_seamstress_test.lua"
-    system "#{bin}/seamstress", "#{bin}/_seamstress_test"
+    test_str = <<~EOF
+      SEAMSTRESS
+      seamstress version: 0.24.2
+      > > seamstress was unable to find user-provided script.lua file!
+      > create such a file and place it in either CWD or ~/seamstress
+      > SEAMSTRESS: goodbye
+    EOF
+    require "open3"
+    Open3.popen3("#{bin}/seamstress") do |stdin, stdout, _|
+      stdin.write("_seamstress.quit_lvm()\n")
+      stdin.close
+      assert_equal test_str, stdout.read
+    end
   end
 end
