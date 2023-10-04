@@ -26,7 +26,7 @@ class Seamstress < Formula
     depends_on "libxrandr"
     depends_on "systemd"
     depends_on "wayland"
-    depends_on "wayland_protocols"
+    depends_on "wayland-protocols"
   end
 
   def install
