@@ -33,11 +33,18 @@ class Seamstress < Formula
   end
 
   test do
+    test_str = <<~EOF
+      SEAMSTRESS
+      seamstress version: 0.24.2
+      > > seamstress was unable to find user-provided script.lua file!
+      > create such a file and place it in either CWD or ~/seamstress
+      > SEAMSTRESS: goodbye
+    EOF
     require "open3"
     Open3.popen3("#{bin}/seamstress") do |stdin, stdout, _|
       stdin.write("_seamstress.quit_lvm()\n")
       stdin.close
-      assert_equal "SEAMSTRESS\nseamstress version: 0.24.2\n> > seamstress was unable to find user-provided script.lua file!\n> create such a file and place it in either CWD or ~/seamstress\n> SEAMSTRESS: goodbye\n", stdout.read
+      assert_equal test_str, stdout.read
     end
   end
 end
