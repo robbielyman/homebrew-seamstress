@@ -2,7 +2,7 @@ class Seamstress < Formula
   desc "Lua scripting environment for musical communication"
   homepage "https://github.com/ryleelyman/seamstress"
   url "https://github.com/ryleelyman/seamstress/archive/refs/tags/v0.24.2.tar.gz"
-  sha256 "e4950f1d1c1dd05a179e50d5169528c553140196c8e03197d55648d20db03c71"
+  sha256 "8042042b66e11f304da887a2a2b036f20e5765cbb61b3ca933623808afc5283b"
   license "GPL-3.0-or-later"
 
   depends_on "pkg-config" => :build
@@ -26,6 +26,7 @@ class Seamstress < Formula
     depends_on "libxrandr"
     depends_on "systemd"
     depends_on "wayland"
+    depends_on "wayland_protocols"
   end
 
   def install
