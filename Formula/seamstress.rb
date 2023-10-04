@@ -1,8 +1,8 @@
 class Seamstress < Formula
   desc "Lua scripting environment for musical communication"
   homepage "https://github.com/ryleelyman/seamstress"
-  url "https://github.com/ryleelyman/seamstress/archive/refs/tags/v0.24.2.tar.gz"
-  sha256 "8af95a6ad6b99d11d23ed452183bcf894a38bfd244898c6bb7c2fba6da6629a6"
+  url "https://github.com/ryleelyman/seamstress/archive/refs/tags/v0.24.3.tar.gz"
+  sha256 "f691d5749ee03dbf42a6df5033039b21464347aae5bc42211c5ee3bad3fcf1fe"
   license "GPL-3.0-or-later"
 
   depends_on "pkg-config" => :build
@@ -17,16 +17,20 @@ class Seamstress < Formula
     depends_on "dbus"
     depends_on "jack"
     depends_on "libdrm"
+    depends_on "libice"
     depends_on "libsamplerate"
+    depends_on "libscrnsaver"
     depends_on "libxcb"
     depends_on "libxcursor"
     depends_on "libxext"
     depends_on "libxi"
     depends_on "libxkbcommon"
     depends_on "libxrandr"
+    depends_on "libxxf86vm"
     depends_on "systemd"
     depends_on "wayland"
     depends_on "wayland-protocols"
+    depends_on "xinput"
   end
 
   def install
@@ -36,7 +40,7 @@ class Seamstress < Formula
   test do
     test_str = <<~EOF
       SEAMSTRESS
-      seamstress version: 0.24.2
+      seamstress version: 0.24.3
       > > seamstress was unable to find user-provided script.lua file!
       > create such a file and place it in either CWD or ~/seamstress
       > SEAMSTRESS: goodbye
