@@ -7,9 +7,9 @@ class Seamstress < Formula
 
   depends_on "pkg-config" => :build
   depends_on "zig" => :build
-  depends_on "libpng"
   depends_on "freetype"
   depends_on "harfbuzz"
+  depends_on "libpng"
   depends_on "ncurses"
 
   def install
