@@ -24,6 +24,7 @@ class Seamstress < Formula
     depends_on "libxi"
     depends_on "libxkbcommon"
     depends_on "libxrandr"
+    depends_on "systemd"
     depends_on "wayland"
   end
 
@@ -32,7 +33,11 @@ class Seamstress < Formula
   end
 
   test do
-    system "echo", "_seamstress.quit_lvm\\(\\)", ">>", "/tmp/_seamstress_test.lua"
-    system "#{bin}/seamstress", "/tmp/_seamstress_test"
+    require "open3"
+    Open3.popen3("#{bin}/seamstress") do |stdin, stdout, _|
+      stdin.write("_seamstress.quit_lvm()\n")
+      stdin.close
+      assert_equal "SEAMSTRESS\nseamstress version: 0.24.2\n> > seamstress was unable to find user-provided script.lua file!\n> create such a file and place it in either CWD or ~/seamstress\n> SEAMSTRESS: goodbye\n", stdout.read
+    end
   end
 end
