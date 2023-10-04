@@ -32,7 +32,7 @@ class Seamstress < Formula
   end
 
   test do
-    system "echo", "_seamstress.quit_lvm\\(\\)", ">>", "#/tmp/_seamstress_test.lua"
-    system "#{bin}/seamstress", "#/tmpn/_seamstress_test"
+    system "echo", "_seamstress.quit_lvm\\(\\)", ">>", "/tmp/_seamstress_test.lua"
+    system "#{bin}/seamstress", "/tmp/_seamstress_test"
   end
 end
