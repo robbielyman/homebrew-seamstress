@@ -11,6 +11,7 @@ class Seamstress < Formula
   depends_on "harfbuzz"
   depends_on "libpng"
   depends_on "ncurses"
+  depends_on :macos
 
   on_linux do
     depends_on "alsa-lib"
