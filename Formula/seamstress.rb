@@ -41,7 +41,7 @@ class Seamstress < Formula
   test do
     test_str = <<~EOF
       SEAMSTRESS
-      seamstress version: 0.24.3
+      seamstress version: 0.24.4
       > > seamstress was unable to find user-provided script.lua file!
       > create such a file and place it in either CWD or ~/seamstress
       > SEAMSTRESS: goodbye
