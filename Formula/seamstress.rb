@@ -5,6 +5,11 @@ class Seamstress < Formula
   sha256 "a008660de51b58ca3cc7b373dcd84667cda9f2ddb926596f4b4f27a1ae0694b1"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/ryleelyman/homebrew-seamstress/releases/download/seamstress-0.24.4"
+    sha256 cellar: :any, ventura: "31b9125e023f2552b7e8993d31b9564e5a1b71e99ae1674ced22fa2fa063ce92"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "zig" => :build
   depends_on "freetype"
