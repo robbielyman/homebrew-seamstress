@@ -1,8 +1,8 @@
 class Seamstress < Formula
   desc "Lua scripting environment for musical communication"
   homepage "https://github.com/ryleelyman/seamstress"
-  url "https://github.com/ryleelyman/seamstress/archive/refs/tags/v0.24.3.tar.gz"
-  sha256 "f691d5749ee03dbf42a6df5033039b21464347aae5bc42211c5ee3bad3fcf1fe"
+  url "https://github.com/ryleelyman/seamstress/archive/refs/tags/v0.24.4.tar.gz"
+  sha256 "a008660de51b58ca3cc7b373dcd84667cda9f2ddb926596f4b4f27a1ae0694b1"
   license "GPL-3.0-or-later"
 
   depends_on "pkg-config" => :build
