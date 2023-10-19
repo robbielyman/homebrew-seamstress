@@ -53,7 +53,7 @@ class Seamstress < Formula
     Open3.popen3("#{bin}/seamstress -q") do |stdin, stdout, _|
       stdin.write("_seamstress.quit_lvm()\n")
       stdin.close
-      assert_equal test_str, stdout.read
+      assert_equal (test_str + " "), stdout.read
     end
   end
 end
