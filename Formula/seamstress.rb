@@ -44,10 +44,6 @@ class Seamstress < Formula
   end
 
   test do
-    test_str = <<~EOF
-      > > seamstress was unable to find user-provided script.lua file!
-      > create such a file and place it in either CWD or ~/seamstress
-    EOF
     require "open3"
     Open3.popen3("#{bin}/seamstress -q") do |stdin, stdout, _|
       stdin.write("_seamstress.quit_lvm()\n")
