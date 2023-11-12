@@ -6,8 +6,8 @@ class Seamstress < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://github.com/ryleelyman/homebrew-seamstress/releases/download/seamstress-1.0.6"
-    sha256 cellar: :any, ventura: "bb8f6ffe9047d7edbe8f70d64fc6bd9e3dc64be351712370f488b8dab0354e7a"
+    root_url "https://github.com/ryleelyman/homebrew-seamstress/releases/download/seamstress-1.0.7"
+    sha256 cellar: :any, ventura: "dd95690d68d4eb94f57a6c4f876ec69b91e21c24d68416ab11c25c9a98f0590f"
   end
 
   depends_on "pkg-config" => :build
