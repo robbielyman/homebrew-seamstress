@@ -60,7 +60,7 @@ class Seamstress < Formula
   -w       watch the directory containing the script file for changes
   -x       override window width [current 256]
   -y       override window height [current 128]
-  EOF
+      EOF
     end
   end
 end
