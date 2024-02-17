@@ -45,22 +45,25 @@ class Seamstress < Formula
 
   test do
     require "open3"
-    Open3.popen3("#{bin}/seamstress -h") do |_, stdout, _|
-      assert_equal stdout, <<~EOF
-        USAGE: seamstress [script] [args]
+    assert_output (<<~EOF
+      USAGE: seamstress [script] [args]
 
-        [script] (optional) should be the name of a lua file in CWD or ~/seamstress
-        [args]   (optional) should be one or more of the following
-        -s       override user script [current script]
-        -e       list or load example scripts
-        -l       override OSC listen port [current 7777]
-        -b       override OSC broadcast port [current 6666]
-        -p       override socket listen port [current 8888]
-        -q       don't print welcome and version number
-        -w       watch the directory containing the script file for changes
-        -x       override window width [current 256]
-        -y       override window height [current 128]
-      EOF
+      [script] (optional) should be the name of a lua file in CWD or ~/seamstress
+      [args]   (optional) should be one or more of the following
+      -s       override user script [current script]
+      -e       list or load example scripts
+      -l       override OSC listen port [current 7777]
+      -b       override OSC broadcast port [current 6666]
+      -p       override socket listen port [current 8888]
+      -q       don't print welcome and version number
+      -w       watch the directory containing the script file for changes
+      -x       override window width [current 256]
+      -y       override window height [current 128]
+    EOF
+                  ) do
+      Open3.popen3("#{bin}/seamstress -h") do |_, stdout, _|
+        return stdout
+      end
     end
   end
 end
