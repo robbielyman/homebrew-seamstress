@@ -45,7 +45,7 @@ class Seamstress < Formula
 
   test do
     require "open3"
-    Open3.popen3("#{bin}/seamstress -q") do |stdin, stdout, _|
+    Open3.popen3("#{bin}/seamstress -q") do |stdin, _, _|
       stdin.write("_seamstress.quit_lvm()\n")
       stdin.close
     end
