@@ -7,7 +7,8 @@ class Seamstress < Formula
 
   bottle do
     root_url "https://github.com/ryleelyman/homebrew-seamstress/releases/download/seamstress-1.4.2"
-    sha256 cellar: :any, ventura: "70974051a21daf856e2860f4ef79c6b669754a963afd3695ff185660717ecd17"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma: "fc29c9839340f3a5acfb398f716fc8783d8b78b955e2a46e7079c76e20005a78"
   end
 
   depends_on "pkg-config" => :build
