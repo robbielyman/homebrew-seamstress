@@ -12,14 +12,14 @@ class Seamstress < Formula
 
   depends_on "pkg-config" => :build
   depends_on "zig" => :build
+  depends_on "asio"
+  depends_on "liblo"
+  depends_on "lua"
   depends_on "readline"
+  depends_on "rtmidi"
   depends_on "SDL2"
   depends_on "SDL2_image"
   depends_on "SDL2_ttf"
-  depends_on "lua"
-  depends_on "liblo"
-  depends_on "rtmidi"
-  depends_on "asio"
 
   def install
     system "zig", "build", "install", "--verbose", "-Doptimize=ReleaseFast", "--prefix", prefix.to_s
