@@ -17,9 +17,9 @@ class Seamstress < Formula
   depends_on "lua"
   depends_on "readline"
   depends_on "rtmidi"
-  depends_on "SDL2"
-  depends_on "SDL2_image"
-  depends_on "SDL2_ttf"
+  depends_on "sdl2"
+  depends_on "sdl2_image"
+  depends_on "sdl2_ttf"
 
   def install
     system "zig", "build", "install", "--verbose", "-Doptimize=ReleaseFast", "--prefix", prefix.to_s
