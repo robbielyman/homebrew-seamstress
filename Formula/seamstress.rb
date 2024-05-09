@@ -12,32 +12,14 @@ class Seamstress < Formula
 
   depends_on "pkg-config" => :build
   depends_on "zig" => :build
-  depends_on "freetype"
-  depends_on "harfbuzz"
-  depends_on "libpng"
-  depends_on :macos
-  depends_on "ncurses"
-
-  on_linux do
-    depends_on "alsa-lib"
-    depends_on "dbus"
-    depends_on "jack"
-    depends_on "libdrm"
-    depends_on "libice"
-    depends_on "libsamplerate"
-    depends_on "libxcb"
-    depends_on "libxcursor"
-    depends_on "libxext"
-    depends_on "libxi"
-    depends_on "libxkbcommon"
-    depends_on "libxrandr"
-    depends_on "libxscrnsaver"
-    depends_on "libxxf86vm"
-    depends_on "systemd"
-    depends_on "wayland"
-    depends_on "wayland-protocols"
-    depends_on "xinput"
-  end
+  depends_on "readline"
+  depends_on "SDL2"
+  depends_on "SDL2_image"
+  depends_on "SDL2_ttf"
+  depends_on "lua"
+  depends_on "liblo"
+  depends_on "rtmidi"
+  depends_on "asio"
 
   def install
     system "zig", "build", "install", "--verbose", "-Doptimize=ReleaseFast", "--prefix", prefix.to_s
