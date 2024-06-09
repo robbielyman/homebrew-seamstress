@@ -1,21 +1,21 @@
 class Seamstress < Formula
-  desc "seamstress is an art engine"
+  desc "Art engine"
   homepage "https://github.com/ryleelyman/seamstress"
   url "https://github.com/ryleelyman/seamstress/archive/refs/tags/v1.4.6.tar.gz"
   sha256 "2fc3823ef302099066fd593433341c2146a3536d23501de0b738d8cbe74fb5cc"
   license "GPL-3.0-or-later"
-
-  head do
-    url "https://github.com/ryleelyman/seamstress.git", branch: "seamstress-2"
-    depends_on "pkg-config" => :build
-    depends_on "zig" => :build
-  end
 
   bottle do
     root_url "https://github.com/ryleelyman/homebrew-seamstress/releases/download/seamstress-1.4.6"
     sha256 cellar: :any,                 arm64_sonoma: "9d28e6a88fbe23cefac403a74d9b2226416e6e5cf70e1a17040e565bb3cdd2f5"
     sha256 cellar: :any,                 ventura:      "e870c0387290153c27168da077c91df9c10078ffaed519ef5120fdbfb0308518"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e33435018770c374cba1eb49cd20684eaa040a6df601ec9a178f9fd70df2c45a"
+  end
+
+  head do
+    url "https://github.com/ryleelyman/seamstress.git", branch: "seamstress-2"
+    depends_on "pkg-config" => :build
+    depends_on "zig" => :build
   end
 
   depends_on "pkg-config" => :build
