@@ -7,9 +7,10 @@ class Seamstress < Formula
 
   bottle do
     root_url "https://github.com/ryleelyman/homebrew-seamstress/releases/download/seamstress-1.4.6"
-    sha256 cellar: :any,                 arm64_sonoma: "9d28e6a88fbe23cefac403a74d9b2226416e6e5cf70e1a17040e565bb3cdd2f5"
-    sha256 cellar: :any,                 ventura:      "e870c0387290153c27168da077c91df9c10078ffaed519ef5120fdbfb0308518"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e33435018770c374cba1eb49cd20684eaa040a6df601ec9a178f9fd70df2c45a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma: "d47dd6a7c114d198ff0929c2260cb793aa24c5dfac61a1b0a9b707b0bf01cb5a"
+    sha256 cellar: :any,                 ventura:      "b2047cfb9115914c3d1b96d5c81d28c3ba1cc08c1c5332e9f56a52cfcba61e86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7fcf93b7582cfaf24b18b4f72ab493c39962ae5aa8b398423b5eb0c8a19e2940"
   end
 
   head do
