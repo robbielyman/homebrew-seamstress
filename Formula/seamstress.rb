@@ -1,9 +1,15 @@
 class Seamstress < Formula
-  desc "Lua scripting environment for musical communication"
+  desc "seamstress is an art engine"
   homepage "https://github.com/ryleelyman/seamstress"
   url "https://github.com/ryleelyman/seamstress/archive/refs/tags/v1.4.6.tar.gz"
   sha256 "2fc3823ef302099066fd593433341c2146a3536d23501de0b738d8cbe74fb5cc"
   license "GPL-3.0-or-later"
+
+  head do
+    url "https://github.com/ryleelyman/seamstress.git", branch: "seamstress-2"
+    depends_on "pkg-config" => :build
+    depends_on "zig" => :build
+  end
 
   bottle do
     root_url "https://github.com/ryleelyman/homebrew-seamstress/releases/download/seamstress-1.4.6"
@@ -29,6 +35,21 @@ class Seamstress < Formula
 
   test do
     require "open3"
+    if build.head?
+      assert_output (<<~EOF
+        SEAMSTRESS
+        seamstress version: 2.0.0-prealpha-4
+        seamstress is an art engine.
+        usage: seamstress [script_file_name]
+        goodbye.
+      EOF
+                    ) do
+        Open.popen3("#{bin}/seamstress -h") do |_, stdout, _|
+          return stdout
+        end
+      end
+      return
+    end
     assert_output (<<~EOF
       USAGE: seamstress [script] [args]
 
