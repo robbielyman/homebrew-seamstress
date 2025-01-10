@@ -2,7 +2,7 @@ class SeamstressAT2 < Formula
   desc "Art engine and batteries-included Lua runtime"
   homepage "https://alanza.xyz/"
   url "https://github.com/robbielyman/seamstress/archive/refs/tags/v2.0.0-alpha+build.250109.tar.gz"
-  sha256 "8cfeb6a3b5de23f03fa395f4dcdf582853e173d888396fed21e87533a34c040d"
+  sha256 "e61cda863afbf5c1555bbee35cdc5a3f0f8b1235451af2ac5a3a6e680eba4e02"
   license "MIT"
 
   depends_on "zig" => :build
