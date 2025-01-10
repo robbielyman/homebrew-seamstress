@@ -21,6 +21,7 @@ class SeamstressAT1 < Formula
   depends_on "sdl2"
   depends_on "sdl2_image"
   depends_on "sdl2_ttf"
+  depends_on "libvmaf" # FIXME: why? I don't understand. is this an sdl thing?
 
   def install
     system "zig", "build", "install", "--verbose", "-Doptimize=ReleaseFast", "--prefix", prefix.to_s
@@ -28,21 +29,6 @@ class SeamstressAT1 < Formula
 
   test do
     require "open3"
-    if build.head?
-      assert_output (<<~EOF
-        SEAMSTRESS
-        seamstress version: 2.0.0-prealpha-4
-        seamstress is an art engine.
-        usage: seamstress [script_file_name]
-        goodbye.
-      EOF
-                    ) do
-        Open.popen3("#{bin}/seamstress -h") do |_, stdout, _|
-          return stdout
-        end
-      end
-      return
-    end
     assert_output (<<~EOF
       USAGE: seamstress [script] [args]
 
