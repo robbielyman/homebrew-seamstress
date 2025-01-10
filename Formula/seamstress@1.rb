@@ -15,13 +15,13 @@ class SeamstressAT1 < Formula
   depends_on "zig" => :build
   depends_on "asio"
   depends_on "liblo"
+  depends_on "libvmaf"
   depends_on "lua"
   depends_on "readline"
   depends_on "rtmidi"
   depends_on "sdl2"
   depends_on "sdl2_image"
-  depends_on "sdl2_ttf"
-  depends_on "libvmaf" # FIXME: why? I don't understand. is this an sdl thing?
+  depends_on "sdl2_ttf" # FIXME: why? I don't understand. is this an sdl thing?
 
   def install
     system "zig", "build", "install", "--verbose", "-Doptimize=ReleaseFast", "--prefix", prefix.to_s
