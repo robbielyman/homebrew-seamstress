@@ -9,6 +9,8 @@ class SeamstressAT1 < Formula
     root_url "https://github.com/robbielyman/homebrew-seamstress/releases/download/seamstress-1.4.6"
   end
 
+  keg_only :versioned_formulae
+
   depends_on "pkg-config" => :build
   depends_on "zig" => :build
   depends_on "asio"
