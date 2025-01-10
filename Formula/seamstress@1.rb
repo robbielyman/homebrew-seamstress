@@ -9,7 +9,7 @@ class SeamstressAT1 < Formula
     root_url "https://github.com/robbielyman/homebrew-seamstress/releases/download/seamstress-1.4.6"
   end
 
-  keg_only :versioned_formulae
+  keg_only "seamstress@1 is not linked by default because it would conflict with seamstress@2"
 
   depends_on "pkg-config" => :build
   depends_on "zig" => :build
