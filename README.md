@@ -1,10 +1,10 @@
-# Ryleelyman Seamstress
+# Seamstress for homebrew
 
 ## How do I install these formulae?
 
-`brew install ryleelyman/seamstress/<formula>`
+`brew install robbielyman/seamstress/<formula>`
 
-Or `brew tap ryleelyman/seamstress` and then `brew install <formula>`.
+Or `brew tap robbielyman/seamstress` and then `brew install <formula>`.
 
 ## Documentation
 
