@@ -6,7 +6,8 @@ class SeamstressAT1 < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://github.com/robbielyman/homebrew-seamstress/releases/download/seamstress-1.4.6"
+    root_url "https://github.com/robbielyman/homebrew-seamstress/releases/download/seamstress@1-1.4.6"
+    sha256 cellar: :any, arm64_sonoma: "0b1a2d299a54f0d05ab9b255e8ecc43f9888234de48e1e0f3a3d515b73d6991b"
   end
 
   keg_only "seamstress@1 is not linked by default because it would conflict with seamstress@2"
