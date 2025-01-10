@@ -5,6 +5,11 @@ class SeamstressAT2 < Formula
   sha256 "e61cda863afbf5c1555bbee35cdc5a3f0f8b1235451af2ac5a3a6e680eba4e02"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/robbielyman/homebrew-seamstress/releases/download/seamstress@2-2.0.0-alpha"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "1b265c58f6a646735ca4bcecb75952a637f082dbd1e6adcf3e100f03fc77ae58"
+  end
+
   depends_on "zig" => :build
   depends_on "busted" => :test
 
