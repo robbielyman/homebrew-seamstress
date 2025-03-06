@@ -1,8 +1,8 @@
 class SeamstressAT1 < Formula
   desc "Art engine"
   homepage "https://github.com/robbielyman/seamstress-v1"
-  url "https://github.com/robbielyman/seamstress-v1/archive/refs/tags/v1.4.6.tar.gz"
-  sha256 "3b1b80560fe3dfdfb1f790c8f8fcdeaeb852166f961995d71c8c01af5d1b8915"
+  url "https://github.com/robbielyman/seamstress-v1/archive/refs/tags/v1.4.7.tar.gz"
+  sha256 "c32c709cc12405d5de630e1a1d993f25db24f24d11d87d8ccd468b1ef614d5cf"
   license "GPL-3.0-or-later"
 
   bottle do
